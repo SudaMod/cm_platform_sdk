@@ -27,8 +27,8 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.RemoteException;
 import android.os.UserHandle;
+import android.text.TextUtils;
 import android.util.ArrayMap;
-import android.util.ArraySet;
 import android.util.Log;
 import android.util.Slog;
 
@@ -113,6 +113,17 @@ public class CMStatusBarManagerService extends SystemService {
                                      final ComponentName component, final int userid) {
             enforceBindCustomTileListener();
             mCustomTileListeners.registerService(listener, component, userid);
+
+            // Notify registered tiles
+            try {
+                for (ExternalQuickSettingsRecord qsTile : mQSTileList) {
+                    if (userid == UserHandle.USER_ALL || qsTile.getUserId() == userid) {
+                        listener.onCustomTilePosted(new StatusBarCustomTileHolder(qsTile.sbTile));
+                    }
+                }
+            } catch (RemoteException re) {
+                // Ignore
+            }
         }
 
         /**
@@ -166,9 +177,14 @@ public class CMStatusBarManagerService extends SystemService {
         mHandler.post(new Runnable() {
             @Override
             public void run() {
+                // Obtain the resources package name
+                String resPkg = customTile.getResourcesPackageName();
+                if (TextUtils.isEmpty(resPkg)) {
+                    resPkg = pkg;
+                }
+
                 final StatusBarPanelCustomTile sbc = new StatusBarPanelCustomTile(
-                        pkg, opPkg, id, tag, callingUid, callingPid, customTile,
-                        user);
+                        pkg, resPkg, opPkg, id, tag, callingUid, callingPid, customTile, user);
                 ExternalQuickSettingsRecord r = new ExternalQuickSettingsRecord(sbc);
                 ExternalQuickSettingsRecord old = mCustomTileByKey.get(sbc.getKey());
 
