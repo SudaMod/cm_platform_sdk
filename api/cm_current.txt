@@ -199,15 +199,15 @@ package cyanogenmod.app {
     method public deprecated void setActiveProfile(java.lang.String);
     method public void setActiveProfile(java.util.UUID);
     method public void updateProfile(cyanogenmod.app.Profile);
-    field public static final java.lang.String ACTION_PROFILE_PICKER = "cyanogenmod_platform.intent.action.PROFILE_PICKER";
+    field public static final java.lang.String ACTION_PROFILE_PICKER = "cyanogenmod.platform.intent.action.PROFILE_PICKER";
     field public static final java.lang.String EXTRA_LAST_PROFILE_NAME = "lastName";
     field public static final java.lang.String EXTRA_LAST_PROFILE_UUID = "uuid";
     field public static final java.lang.String EXTRA_PROFILES_STATE = "profile_state";
     field public static final java.lang.String EXTRA_PROFILE_DIALOG_THEME = "cyanogenmod.platform.intent.extra.profile.DIALOG_THEME";
-    field public static final java.lang.String EXTRA_PROFILE_EXISTING_UUID = "android.intent.extra.profile.EXISTING_UUID";
+    field public static final java.lang.String EXTRA_PROFILE_EXISTING_UUID = "cyanogenmod.platform.extra.profile.EXISTING_UUID";
     field public static final java.lang.String EXTRA_PROFILE_NAME = "name";
     field public static final java.lang.String EXTRA_PROFILE_PICKED_UUID = "cyanogenmod.platform.intent.extra.profile.PICKED_UUID";
-    field public static final java.lang.String EXTRA_PROFILE_SHOW_NONE = "android.intent.extra.profile.SHOW_NONE";
+    field public static final java.lang.String EXTRA_PROFILE_SHOW_NONE = "cyanogenmod.platform.intent.extra.profile.SHOW_NONE";
     field public static final java.lang.String EXTRA_PROFILE_TITLE = "cyanogenmod.platform.intent.extra.profile.TITLE";
     field public static final java.lang.String EXTRA_PROFILE_UUID = "uuid";
     field public static final java.lang.String INTENT_ACTION_PROFILE_SELECTED = "cyanogenmod.platform.intent.action.PROFILE_SELECTED";
