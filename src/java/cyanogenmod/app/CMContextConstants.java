@@ -50,4 +50,27 @@ public final class CMContextConstants {
      * @hide
      */
     public static final String CM_PROFILE_SERVICE = "profile";
+
+    /**
+     * Use with {@link android.content.Context#getSystemService} to retrieve a
+     * {@link cyanogenmod.app.SettingsManager} changing system settings.
+     *
+     * @see android.content.Context#getSystemService
+     * @see cyanogenmod.app.SettingsManager
+     *
+     * @hide
+     */
+    public static final String CM_SETTINGS_SERVICE = "cmsettings";
+
+    /**
+     * Use with {@link android.content.Context#getSystemService} to retrieve a
+     * {@link cyanogenmod.app.CMTelephonyManager} to manage the phone and
+     * data connection.
+     *
+     * @see android.content.Context#getSystemService
+     * @see cyanogenmod.app.CMTelephonyManager
+     *
+     * @hide
+     */
+    public static final String CM_TELEPHONY_MANAGER_SERVICE = "cmtelephonymanager";
 }
