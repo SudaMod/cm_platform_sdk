@@ -63,7 +63,8 @@
                 android:icon="@drawable/ic_launcher_cyanogenmod"
                 android:protectionLevel="normal" />
 
-    <!-- Allows an application access to the CM hardware abstraction framework -->
+    <!-- Allows an application access to the CM hardware abstraction framework
+        <p>Not for use by third-party applications. -->
     <permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS"
                 android:label="@string/permlab_useHardwareFramework"
                 android:description="@string/permdesc_useHardwareFramework"
@@ -75,12 +76,40 @@
                 android:description="@string/permdesc_writeSettings"
                 android:protectionLevel="normal" />
 
+    <!-- Allows an application to modify system profiles -->
+    <permission android:name="cyanogenmod.permission.MODIFY_PROFILES"
+                android:label="@string/permlab_modifyProfiles"
+                android:description="@string/permdesc_modifyProfiles"
+                android:protectionLevel="normal" />
+
     <!-- Allows an application to write to secure CM system settings.
         <p>Not for use by third-party applications. -->
     <permission android:name="cyanogenmod.permission.WRITE_SECURE_SETTINGS"
                 android:label="@string/permlab_writeSecureSettings"
                 android:description="@string/permdesc_writeSecureSettings"
                 android:protectionLevel="signature|system|development" />
+
+    <!-- Allows an application to write alarms to the default alarm clock application
+        <p>Not for use by third-party applications. -->
+    <permission android:name="cyanogenmod.permission.WRITE_ALARMS"
+                android:permissionGroup="android.permission-group.SYSTEM_CLOCK"
+                android:protectionLevel="system|signature"
+                android:label="@string/permlab_write_alarms"
+                android:description="@string/permdesc_write_alarms"/>
+
+    <!-- Allows an application to manage alarms on the default alarm clock application -->
+    <permission android:name="cyanogenmod.permission.MANAGE_ALARMS"
+                android:permissionGroup="android.permission-group.SYSTEM_CLOCK"
+                android:protectionLevel="normal"
+                android:label="@string/permlab_manage_alarms"
+                android:description="@string/permdesc_manage_alarms"/>
+
+    <!-- Allows an application to read alarms from the default alarm clock application -->
+    <permission android:name="cyanogenmod.permission.READ_ALARMS"
+                android:permissionGroup="android.permission-group.SYSTEM_CLOCK"
+                android:protectionLevel="normal"
+                android:label="@string/permlab_read_alarms"
+                android:description="@string/permdesc_read_alarms"/>
 
     <application android:process="system"
                  android:persistent="true"
