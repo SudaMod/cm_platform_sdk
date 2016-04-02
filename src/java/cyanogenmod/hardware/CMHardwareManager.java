@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2015-2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,6 +123,12 @@ public final class CMHardwareManager {
      * Thermal change monitor
      */
     public static final int FEATURE_THERMAL_MONITOR = 0x8000;
+
+    /**
+     * Unique device ID
+     * @hide
+     */
+    public static final int FEATURE_UNIQUE_DEVICE_ID = 0x10000;
 
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
@@ -428,8 +434,8 @@ public final class CMHardwareManager {
     /**
      * Write a string to persistent storage, which persists thru factory reset
      *
-     * @param key String identifier for this item
-     * @param value The UTF-8 encoded string to store
+     * @param key String identifier for this item. Must not exceed 64 characters.
+     * @param value The UTF-8 encoded string to store of at least 1 character. null deletes the key/value pair.
      * @return true on success
      */
     public boolean writePersistentString(String key, String value) {
@@ -448,7 +454,7 @@ public final class CMHardwareManager {
     /**
      * Write an integer to persistent storage, which persists thru factory reset
      *
-     * @param key String identifier for this item
+     * @param key String identifier for this item. Must not exceed 64 characters.
      * @param value The integer to store
      * @return true on success
      */
@@ -466,8 +472,8 @@ public final class CMHardwareManager {
     /**
      * Write a byte array to persistent storage, which persists thru factory reset
      *
-     * @param key String identifier for this item
-     * @param value The byte array to store, up to 4096 bytes
+     * @param key String identifier for this item. Must not exceed 64 characters.
+     * @param value The byte array to store, must be 1-4096 bytes. null deletes the key/value pair.
      * @return true on success
      */
     public boolean writePersistentBytes(String key, byte[] value) {
@@ -483,7 +489,7 @@ public final class CMHardwareManager {
     /**
      * Read a string from persistent storage
      *
-     * @param key String identifier for this item
+     * @param key String identifier for this item. Must not exceed 64 characters.
      * @return the stored UTF-8 encoded string, null if not found
      */
     public String readPersistentString(String key) {
@@ -504,7 +510,7 @@ public final class CMHardwareManager {
     /**
      * Read an integer from persistent storage
      *
-     * @param key String identifier for this item
+     * @param key String identifier for this item. Must not exceed 64 characters.
      * @return the stored integer, zero if not found
      */
     public int readPersistentInt(String key) {
@@ -523,7 +529,7 @@ public final class CMHardwareManager {
     /**
      * Read a byte array from persistent storage
      *
-     * @param key String identifier for this item
+     * @param key String identifier for this item. Must not exceed 64 characters.
      * @return the stored byte array, null if not found
      */
     public byte[] readPersistentBytes(String key) {
@@ -700,6 +706,21 @@ public final class CMHardwareManager {
     }
 
     /**
+     * @return an id that's both unique and deterministic for the device
+     *
+     * @hide
+     */
+    public String getUniqueDeviceId() {
+        try {
+            if (checkService()) {
+                return sService.getUniqueDeviceId();
+            }
+        } catch (RemoteException e) {
+        }
+        return null;
+    }
+
+    /**
      * @return true if adaptive backlight should be enabled when sunlight enhancement
      * is enabled.
      */
@@ -707,6 +728,20 @@ public final class CMHardwareManager {
         try {
             if (checkService()) {
                 return sService.requireAdaptiveBacklightForSunlightEnhancement();
+            }
+        } catch (RemoteException e) {
+        }
+        return false;
+    }
+
+    /**
+     * @return true if this implementation does it's own lux metering
+     * @hide
+     */
+    public boolean isSunlightEnhancementSelfManaged() {
+        try {
+            if (checkService()) {
+                return sService.isSunlightEnhancementSelfManaged();
             }
         } catch (RemoteException e) {
         }
