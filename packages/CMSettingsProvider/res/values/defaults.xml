@@ -40,6 +40,9 @@
     <!-- Defaults for CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR -->
     <integer name="def_force_show_navbar">0</integer>
 
+    <!-- Defaults for CMSettings.Secure.CM_SETUP_WIZARD_COMPLETED -->
+    <integer name="def_setup_wizard_completed">1</integer>
+
     <!-- THESE DEFAULTS COME FROM org.cyanogenmod.platform.internal's config_defaultQuickSettingsTiles
          AND SHOULD BE OVERLAID THERE.
 
