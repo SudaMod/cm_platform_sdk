@@ -351,6 +351,10 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
                     CMSettings.Secure.CM_SETUP_WIZARD_COMPLETED,
                     R.integer.def_setup_wizard_completed);
 
+            loadStringSetting(stmt,
+                    CMSettings.Secure.ENABLED_EVENT_LIVE_LOCKS_KEY,
+                    R.string.def_enabled_event_lls_components);
+
         } finally {
             if (stmt != null) stmt.close();
         }
