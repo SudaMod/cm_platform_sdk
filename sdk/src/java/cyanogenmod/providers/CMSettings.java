@@ -1431,6 +1431,16 @@ public final class CMSettings {
                 sBooleanValidator;
 
         /**
+         * Enable double tap gesture anywhere on the lock screen put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_ANYWHERE = "double_tap_sleep_anywhere";
+
+        /** @hide */
+        public static final Validator DOUBLE_TAP_SLEEP_ANYWHERE_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * Boolean value on whether to show weather in the statusbar
          * 0 = 0ff, 1 = on
          */
