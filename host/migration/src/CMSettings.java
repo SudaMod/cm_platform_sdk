@@ -84,6 +84,7 @@ public final class CMSettings {
          * 4: Hide the battery status information
          * 5: Display the battery an icon in landscape mode
          * 6: Display the battery as plain text
+         * 7: Display the solid PA battery
          * default: 0
          * @hide
          */
