@@ -996,6 +996,8 @@ public final class CMSettings {
          * 7 - Action Sleep
          * 8 - Last app
          * 9 - Toggle split screen
+         * 10 - Single hand (left)
+         * 11 - Single hand (right)
          */
         public static final String KEY_HOME_LONG_PRESS_ACTION = "key_home_long_press_action";
 
