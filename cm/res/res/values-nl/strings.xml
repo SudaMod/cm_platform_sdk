@@ -20,7 +20,7 @@
   <!-- Label for the LineageOS system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">LineageOS-systeem</string>
   <string name="permlab_publishCustomTile">een aangepaste tegel aanmaken in het snelle instellingenpaneel</string>
-  <string name="permdesc_publishCustomTile">Hiermee kan een app een tegel toevoegen aan Snelle instellingen.</string>
+  <string name="permdesc_publishCustomTile">Hiermee kan een app een tegel toevoegen aan snelle instellingen.</string>
   <string name="permlab_modifyNetworkSettings">systeemnetwerkinstellingen wijzigen</string>
   <string name="permdesc_modifyNetworkSettings">Hiermee kan de app wijzigingen aanbrengen in de vliegtuigmodus en de mobiele netwerkinstellingen.</string>
   <string name="permlab_modifySoundSettings">systeemgeluidinstellingen wijzigen</string>
@@ -185,4 +185,6 @@
   <!-- Privacy Guard -->
   <string name="privacy_guard_manager_title">Privacybescherming</string>
   <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">instellingen voor beheer op afstand</string>
+  <string name="permdesc_manageRemotePrefs">Hiermee kan de app instellingen voor beheer op afstand beheren</string>
 </resources>
