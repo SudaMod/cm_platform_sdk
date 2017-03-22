@@ -85,6 +85,7 @@ public final class CMSettings {
          * 5: Display the battery an icon in landscape mode
          * 6: Display the battery as plain text
          * 7: Display the solid PA battery
+         * 8: Dysplay the AOKP Tha Battery
          * default: 0
          * @hide
          */
