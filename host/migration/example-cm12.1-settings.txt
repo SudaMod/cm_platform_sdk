@@ -35,7 +35,6 @@ Row: 31 name=display_temperature_mode, type=s, value=2, type=s
 Row: 32 name=display_temperature_day, type=s, value=5600, type=s
 Row: 33 name=display_color_adjustment, type=s, value=0.999982 0.999982 0.999982, type=s
 Row: 34 name=double_tap_sleep_gesture, type=s, value=1, type=s
-Row: 34 name=double_tap_sleep_anywhere, type=s, value=1, type=s
 Row: 35 name=recents_show_search_bar, type=s, value=0, type=s
 Row: 36 name=battery_light_enabled, type=s, value=1, type=s
 Row: 37 name=battery_light_pulse, type=s, value=1, type=s

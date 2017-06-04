@@ -444,12 +444,6 @@ public final class CMSettings {
         public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
 
         /**
-         * Enable double tap gesture anywhere on the lock screen put device to sleep
-         * @hide
-         */
-        public static final String DOUBLE_TAP_SLEEP_ANYWHERE = "double_tap_sleep_anywhere";
-
-        /**
          * Boolean value on whether to show weather in the statusbar
          * @hide
          */
@@ -697,7 +691,6 @@ public final class CMSettings {
                 CMSettings.System.DISPLAY_COLOR_ADJUSTMENT,
                 CMSettings.System.LIVE_DISPLAY_HINTED,
                 CMSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
-                CMSettings.System.DOUBLE_TAP_SLEEP_ANYWHERE,
                 CMSettings.System.STATUS_BAR_SHOW_WEATHER,
                 CMSettings.System.RECENTS_SHOW_SEARCH_BAR,
                 CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE,
